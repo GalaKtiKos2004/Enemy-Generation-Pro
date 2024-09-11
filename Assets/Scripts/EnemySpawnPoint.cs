@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class EnemySpawnPoint : MonoBehaviour
 {
-    [SerializeField] private EnemyMovement _prefab;
-    [SerializeField] private GameObject _target;
+    [SerializeField] private EnemyMover _prefab;
+    [SerializeField] private PlayerMover _target;
 
     public void Create()
     {
-        EnemyMovement enemy = Instantiate(_prefab, transform.position, Quaternion.identity);
+        EnemyMover enemy = Instantiate(_prefab, transform.position, Quaternion.identity);
         enemy.Init(_target);
     }
 }
